@@ -1,7 +1,6 @@
 var fs = require('fs')
 
 var dirName = process.argv[2] // 参数是从第 2 个开始的
-
 if(fs.existsSync("./"+dirName)){
     console.log("error: dir exists")
     process.exit(1)
