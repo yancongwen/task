@@ -1,6 +1,6 @@
 var fs = require('fs')
 
-var dirName = process.argv[2] // 参数是从第 2 个开始的
+var dirName = process.argv[2] // 参数是node命令输入的第2个命令
 
 if(fs.existsSync("./"+dirName)){
     console.log("error: dir exists")
