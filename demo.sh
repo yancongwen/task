@@ -1,6 +1,6 @@
 if [ -d $1 ]; then
   echo 'error: dir exists'
-  exit
+  exit 1
 else
   mkdir $1
   cd $1
@@ -10,5 +10,5 @@ else
   echo -e "h1{color: red;}">>css/style.css
   echo -e "var string = 'Hello World'\nalert(string)">>js/main.js
   echo 'success'
-  exit
+  exit 0
 fi
