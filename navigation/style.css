@@ -1,0 +1,66 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+html,body{
+	display: flex;
+    height: 100%;
+    flex-direction: column;
+}
+footer {
+	height: 20px;
+	line-height: 20px;
+	font-size: 12px;
+	text-align: center;
+}
+main{
+	flex: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: grey url(https://img.yancongwen.cn/18-8-6/73922635.jpg) center no-repeat;
+	background-size: cover;
+}
+.wrapper{
+	background: rgba(234,234,234,0.3);
+	box-shadow: 0px 0px 8px 0px #eee;
+	padding: 24px;
+}
+.row:nth-child(2){
+	margin-left: 20px;
+}
+.row:nth-child(3){
+	margin-left: 58px;
+}
+kbd{
+	display: inline-block;
+	width: 52px;
+	height: 42px;
+	margin: 8px;
+	background: linear-gradient(to bottom, #292929 0%,#111111 100%);
+    border: 1px solid #373737;
+    color: #CECECE;
+    border-radius: 6px;
+    box-shadow: 0 0 0 1px #1A1B1C, 0 0 0 2px #1F2020, 0 3px 0 2px #080808;
+    position: relative;
+    font-size: 16px;
+    font-family: Helvetica;
+    cursor: pointer;
+}
+kbd > img{
+	width: 16px;
+	height: 16px;
+	position: absolute;
+	bottom: 2px;
+	left: 2px;
+}
+kbd > button{
+	display: none;
+	position: absolute;
+	bottom: 2px;
+	right: 0;
+	cursor: pointer;
+}
+kbd:hover button{
+	display: inline;
+}
