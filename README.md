@@ -1,3 +1,4 @@
+[TOC]
 # xdml_task 小练习
 - 初识bash、node脚本
 - 简单的node.js server

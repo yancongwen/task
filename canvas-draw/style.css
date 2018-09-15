@@ -1,0 +1,88 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.main {
+  height: 100%;
+  position: relative;
+}
+.icon {
+  width: 1.5em;
+  height: 1.5em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+  cursor: pointer;
+  margin: 10px;
+}
+.tools {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+.tools>.active {
+  color: red;
+  transform: scale(1.2);
+}
+.colors {
+  position: absolute;
+  top: 60px;
+  left: 10px;
+}
+.colors>.btn {
+  display: block;
+  width: 18px;
+  height: 18px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  margin: 10px;
+  cursor: pointer;
+}
+.black {
+  background-color: black;
+}
+.red {
+  background-color: red;
+}
+.green {
+  background-color: green;
+}
+.blue {
+  background-color: blue;
+}
+.black.active {
+  box-shadow: 0 0 6px 1px black;
+}
+.red.active {
+  box-shadow: 0 0 6px 1px red;
+}
+.green.active {
+  box-shadow: 0 0 6px 1px green;
+}
+.blue.active {
+  box-shadow: 0 0 6px 1px blue;
+}
+.pens {
+  position: absolute;
+  top: 20px;
+  right: 10px;
+}
+.pens>.btn {
+  display: block;
+  width: 18px;
+  margin: 10px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+}
+.pens>.width-2 {
+  height: 4px;
+}
+.pens>.width-4 {
+  height: 6px;
+}
+.pens>.width-8 {
+  height: 10px;
+}
