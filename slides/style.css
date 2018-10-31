@@ -1,0 +1,60 @@
+button {
+  position: absolute;
+  top: 150px;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  background: transparent;
+  outline: none;
+  border: none;
+  border-radius: 50%;
+  padding: 0;
+  cursor: pointer;
+}
+button:hover {
+  background: rgba(100, 100, 100, 0.1);
+}
+ul,
+li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.right-btn {
+  right: 0;
+}
+.dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  bottom: 10px;
+  transition: 0.5s;
+}
+.dots > .dot {
+  width: 16px;
+  height: 4px;
+  margin: 0 2px;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+}
+.dots > .dot.active {
+  width: 18px;
+  height: 6px;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.6);
+}
+
+#view1 {
+  position: relative;
+  width: 400px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+#view1 .images {
+  display: flex;
+  width: 2000px;
+  transition: all 0.5s;
+}

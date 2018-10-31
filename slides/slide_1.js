@@ -1,0 +1,60 @@
+var buttons = $('#view1 .dot');
+var length = buttons.length;
+var timer;
+var current = 0;
+
+// 给按钮绑定点击事件
+for (var i = 0; i < length; i++) {
+  $(buttons[i]).on('click', function(e) {
+    $(e.target).siblings().removeClass('active');
+    $(e.target).addClass('active');
+    var index = $(e.target).index()
+    var x = -index * 400;
+    current = index
+    $('#view1 .images').css('transform', 'translateX(' + x + 'px)');
+  });
+  $(buttons[i]).on('mouseenter', function() {
+    window.clearInterval(timer);
+  });
+  $(buttons[i]).on('mouseleave', function() {
+    setTimer();
+  });
+}
+
+// 设置定时器
+function setTimer() {
+  timer = window.setInterval(function() {
+    current++;
+    $(buttons[current % length]).trigger("click");
+  }, 3000);
+}
+
+// 向左向右按钮点击事件
+$('#view1 .left-btn').on('click', function() {
+  current--
+  var x = -current * 400;
+  $('#view1 .images').css('transform', 'translateX(' + x + 'px)');
+});
+$('#view1 .right-btn').on('click', function() {
+  current++;
+  $(buttons[current % length]).trigger("click");
+});
+
+// 当鼠标划过图片停止自动播放
+$('.images').on('mouseenter', function() {
+  window.clearInterval(timer);
+})
+// 当鼠标划出图片开始播放
+$('.images').on('mouseleave', function() {
+  setTimer();
+})
+// 当鼠标划过所有按钮时停止自动播放
+$('.btn').on('mouseenter', function() {
+  window.clearInterval(timer);
+})
+// 当鼠标划出所有按钮时开始播放
+$('.btn').on('mouseleave', function() {
+  setTimer();
+})
+// 一加载页面就开始播放
+setTimer();
