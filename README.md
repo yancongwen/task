@@ -8,7 +8,12 @@
     - 预览：[https://yancongwen.cn/xdml_task/taiji/](http://yancongwen.cn/xdml_task/taiji/)
     - 介绍：
         只使用了一个DIV元素，使用CSS伪元素和渐变颜色制作
-
+    
+- 图片轮播
+    - 预览：[https://yancongwen.cn/xdml_task/slides/](http://yancongwen.cn/xdml_task/slides/)
+    - 介绍：
+        三种方式实现图片轮播；
+        
 - 导航页
     - 预览：[https://yancongwen.cn/xdml_task/navigation/](http://yancongwen.cn/xdml_task/navigation/)
     - 介绍：
