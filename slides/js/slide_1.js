@@ -1,3 +1,5 @@
+// 最简单的轮播，无法实现无缝切换
+
 (function() {
   var buttons = $('#view1 .dot')
   var length = buttons.length
@@ -55,4 +57,13 @@
   })
   // 一加载页面就开始播放
   setTimer()
+
+  // 监听页面否切换，切换的话就停止轮播
+  document.addEventListener('visibilitychange', function(e) {
+    if (document.visibilityState == 'hidden') {
+      window.clearInterval(timer)
+    } else {
+      setTimer()
+    }
+  })
 })()
