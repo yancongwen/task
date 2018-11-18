@@ -1,3 +1,8 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 button {
   position: absolute;
   top: 150px;
@@ -20,6 +25,12 @@ li {
   padding: 0;
   margin: 0;
 }
+h2 {
+  text-align: center;
+}
+.left-btn {
+  left: 0;
+}
 .right-btn {
   right: 0;
 }
@@ -41,20 +52,6 @@ li {
   cursor: pointer;
 }
 .dots > .dot.active {
-  width: 18px;
-  height: 6px;
-  border-radius: 3px;
-  background: rgba(255, 255, 255, 0.6);
-}
-
-#view1 {
-  position: relative;
-  width: 400px;
-  overflow: hidden;
-  margin: 0 auto;
-}
-#view1 .images {
-  display: flex;
-  width: 2000px;
-  transition: all 0.5s;
+  width: 20px;
+  background: rgba(255, 255, 255, 0.8);
 }

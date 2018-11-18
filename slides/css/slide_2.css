@@ -1,0 +1,29 @@
+#view2 {
+  position: relative;
+  width: 400px;
+  height: 300px;
+  overflow: hidden;
+  margin: 20px auto;
+}
+#view2 > .images {
+  position: relative;
+  width: 400px;
+}
+#view2 > .images > img{
+  width: 100%;
+  transition: all 1s;
+  position: absolute;
+  top: 0;
+}
+#view2 > .images > img.current {
+  left: 0;
+  transform: translateX(0);
+  z-index: 1;
+}
+#view2 > .images > img.leave {
+  transform: translateX(-100%);
+  z-index: 1;
+}
+#view2 > .images > img.enter {
+  transform: translateX(100%);
+}

@@ -1,0 +1,11 @@
+#view1 {
+  position: relative;
+  width: 400px;
+  overflow: hidden;
+  margin: 20px auto;
+}
+#view1 .images {
+  display: flex;
+  width: 2000px;
+  transition: all 1s;
+}
