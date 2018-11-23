@@ -20,10 +20,14 @@
 
   // 设置定时器
   function setTimer() {
-    timer = window.setInterval(function() {
+    timer = setTimeout(function() {
       current++
       $(buttons[current % length]).trigger("click")
+      setTimer()
     }, 3000)
+  }
+  function clearTimer() {
+    clearTimeout(timer)
   }
 
   // 向左向右按钮点击事件
@@ -41,7 +45,7 @@
 
   // 当鼠标划过图片停止自动播放
   $('.images').on('mouseenter', function() {
-    window.clearInterval(timer)
+    clearTimer()
   })
   // 当鼠标划出图片开始播放
   $('.images').on('mouseleave', function() {
@@ -49,7 +53,7 @@
   })
   // 当鼠标划过所有按钮时停止自动播放
   $('.btn').on('mouseenter', function() {
-    window.clearInterval(timer)
+    clearTimer()
   })
   // 当鼠标划出所有按钮时开始播放
   $('.btn').on('mouseleave', function() {
@@ -58,10 +62,10 @@
   // 一加载页面就开始播放
   setTimer()
 
-  // 监听页面否切换，切换的话就停止轮播
+  // 监听页面是否切换，切换的话就停止轮播
   document.addEventListener('visibilitychange', function(e) {
     if (document.visibilityState == 'hidden') {
-      window.clearInterval(timer)
+      clearTimer()
     } else {
       setTimer()
     }

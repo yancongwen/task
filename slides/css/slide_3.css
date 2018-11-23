@@ -1,0 +1,15 @@
+#view3 {
+  position: relative;
+  width: 400px;
+  height: 300px;
+  overflow: hidden;
+  margin: 20px auto;
+}
+#view3 > .images {
+  display: flex;
+  transition: all 1s;
+  transform: translateX(-100%);
+}
+#view3 > .images > img {
+  flex-shrink: 0;
+}
