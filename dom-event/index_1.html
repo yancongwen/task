@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>DOM 事件模型</title>
+  <style>
+    html,body {
+      background: #eee;
+    }
+    .dialog {
+      width: 400px;
+      height: 300px;
+      border: 1px solid #ccc;
+      background: #fff;
+      margin: 30px auto;
+      display: none;
+      padding: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="wrapper">
+    <button id="btn">按钮</button>
+    <div id="dialog" class="dialog">
+      <h2>对话框</h2>
+      <form action="">
+        <label>姓名：<input type="text"/ name="name"></label></br>
+        性别：<label>男<input type="radio" value="men" name="sex" /></label>
+        <label>女<input type="radio" value="women" name="sex"></label></br>
+        <label>年龄：<input type="number"/ name="age"></label></br>
+      </form>
+    </div>
+  </div>
+  <script>
+  // 点击按钮打开对话框，点解页面空白区域关闭对话框
+
+  btn.addEventListener('click', function(e) {
+    if ("block" === dialog.style.display) {
+      dialog.style.display = "none"
+    } else {
+      dialog.style.display = "block"
+    }
+    // 阻止冒泡
+    e.stopPropagation()
+  })
+
+  dialog.addEventListener('click', function(e) {
+    // 阻止冒泡
+    e.stopPropagation()
+  })
+
+  document.addEventListener('click', function(e) {
+    dialog.style.display = "none"
+  })
+  </script>
+</body>
+
+</html>

@@ -8,7 +8,10 @@
     - 预览：[https://yancongwen.cn/task/taiji/](http://yancongwen.cn/task/taiji/)
     - 介绍：
         只使用了一个DIV元素，使用CSS伪元素和渐变颜色制作
-    
+- DOM 事件模型
+    - 预览：[https://yancongwen.cn/task/dom-event/](http://yancongwen.cn/task/dom-event/)
+    - 介绍：
+        理解事件捕获、事件冒泡比较好的一个例子
 - 图片轮播
     - 预览：[https://yancongwen.cn/task/slides/](http://yancongwen.cn/task/slides/)
     - 介绍：
