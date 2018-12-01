@@ -10,26 +10,44 @@
   <h1>XMLHttpRequest 请求练习</h1>
   <button id="btn" onclick="getData()">按钮</button>
   <script>
-  function getData() {
-    var request = new XMLHttpRequest()
-    request.open('GET', 'http://yan.cn:8888/api/data')
-    request.setRequestHeader('content-type','application/x-www-form-urlencoded')
-    request.send('')
-    request.onreadystatechange = function() {
-      if (request.readyState === 4) {
-        if (request.status >= 200 && request.status < 300) {
-          console.log('Success')
-          console.log(request.responseText)
-          return
-        } else if (request.status >= 300 && request.status < 400) {
-          console.log('Redirecton')
-        } else if (request.status >= 400 && request.status < 500) {
-          console.log('Client Error')
-        } else if (request.status >= 500) {
-          console.log('Server Error')
+  window.jQuery = function(){
+    return {}
+  }
+  window.$ = window.jQuery
+  jQuery.ajax = function(params) {
+    let {url,method,body,headers} = params
+    let promise = new Promise(function(resolve,reject){
+      let request = new XMLHttpRequest()
+      request.open(method, url)
+      for (key in headers) {
+        request.setRequestHeader(key, headers[key])
+      }
+      request.onreadystatechange = function() {
+        if (request.readyState === 4) {
+          if (request.status >= 200 && request.status < 300) {
+            resolve.call(undefined, request.responseText)
+          } else {
+            reject.call(undefined, request)
+          }
         }
       }
-    }
+      request.send(body)
+    })
+    return promise
+  }
+  function getData() {
+    $.ajax({
+      url: 'http://yan.cn:8888/api/data',
+      method: 'GET',
+      headers: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      body: 'name=javon'
+    }).then(function(response) {
+      console.log(response)
+    },function(err) {
+      console.log(err)
+    })
   }
   </script>
 </body>
