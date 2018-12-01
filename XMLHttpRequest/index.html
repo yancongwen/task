@@ -7,21 +7,29 @@
 </head>
 
 <body>
+  <h1>XMLHttpRequest 请求练习</h1>
+  <button id="btn" onclick="getData()">按钮</button>
   <script>
-  var xhr = new XMLHttpRequest()
-  xhr.onreadystatechange = callback
-  xhr.open('GET', './data.txt', true)
-  xhr.send('')
-
-  function callback() {
-    if (xhr.readyState < 4) {
-      return
+  function getData() {
+    var xhr = new XMLHttpRequest()
+    xhr.open('GET', 'http://yan.cn:8081/xxx', true)
+    xhr.setRequestHeader('content-type','application/x-www-form-urlencoded')
+    xhr.send('')
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState === 4) {
+        if (xhr.status >= 200 && xhr.status < 300) {
+          console.log('Success')
+          console.log(xhr.responseText)
+          return
+        } else if (xhr.status >= 300 && xhr.status < 400) {
+          console.log('Redirecton')
+        } else if (xhr.status >= 400 && xhr.status < 500) {
+          console.log('Client Error')
+        } else if (xhr.status >= 500) {
+          console.log('Server Error')
+        }
+      }
     }
-    if (xhr.status !== 200) {
-      alert('the status code is not ok')
-      return
-    }
-    alert(xhr.responseText)
   }
   </script>
 </body>

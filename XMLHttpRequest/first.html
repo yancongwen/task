@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>XMLHttpRequest</title>
+</head>
+
+<body>
+  <h1>XMLHttpRequest 请求本地文件</h1>
+  <script>
+  var xhr = new XMLHttpRequest()
+  xhr.onreadystatechange = callback
+  xhr.open('GET', './data.txt', true)
+  xhr.send('')
+
+  function callback() {
+    if (xhr.readyState < 4) {
+      return
+    }
+    if (xhr.status !== 200) {
+      alert('the status code is not ok')
+      return
+    }
+    alert(xhr.responseText)
+  }
+  </script>
+</body>
+
+</html>

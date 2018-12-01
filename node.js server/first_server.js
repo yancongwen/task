@@ -4,7 +4,7 @@ var url = require('url')
 var port = process.argv[2]
 
 if(!port){
-  console.log('请指定端口号好不啦？\nnode server.js 8888 这样不会吗？')
+  console.log('请指定端口号!\n示例：node first_server.js 8080')
   process.exit(1)
 }
 
@@ -17,9 +17,8 @@ var server = http.createServer(function(request, response){
   var queryObject = parsedUrl.query
   var method = request.method
 
-  /******** 从这里开始看，上面不要看 ************/
+  console.log('Request: ' + path)
 
-  console.log('HTTP 路径为\n' + path)
   if(path == '/style.css'){
     response.setHeader('Content-Type', 'text/css; charset=utf-8')
     response.write('body{background-color: #ddd;}h1{color: red;}')
@@ -37,12 +36,21 @@ var server = http.createServer(function(request, response){
       '<script src="/main.js"></script>' +
       '</body></html>')
     response.end()
-  }else{
+  }else if(path == '/api/data'){
+    response.statusCode = 200
+    response.setHeader('Content-Type', 'text/json;charset=utf-8')
+    response.setHeader('Access-Control-Allow-Origin', 'http://frank.com:8001')
+    response.write(`{
+      "name":"Javon Yan",
+      "age": 18
+    }`)
+    response.end()
+  }
+  else{
     response.statusCode = 404
     response.end()
   }
 
-  /******** 代码结束，下面不要看 ************/
 })
 
 server.listen(port)
