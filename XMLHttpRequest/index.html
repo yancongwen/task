@@ -11,21 +11,21 @@
   <button id="btn" onclick="getData()">按钮</button>
   <script>
   function getData() {
-    var xhr = new XMLHttpRequest()
-    xhr.open('GET', 'http://yan.cn:8081/xxx', true)
-    xhr.setRequestHeader('content-type','application/x-www-form-urlencoded')
-    xhr.send('')
-    xhr.onreadystatechange = function() {
-      if (xhr.readyState === 4) {
-        if (xhr.status >= 200 && xhr.status < 300) {
+    var request = new XMLHttpRequest()
+    request.open('GET', 'http://yan.cn:8888/api/data')
+    request.setRequestHeader('content-type','application/x-www-form-urlencoded')
+    request.send('')
+    request.onreadystatechange = function() {
+      if (request.readyState === 4) {
+        if (request.status >= 200 && request.status < 300) {
           console.log('Success')
-          console.log(xhr.responseText)
+          console.log(request.responseText)
           return
-        } else if (xhr.status >= 300 && xhr.status < 400) {
+        } else if (request.status >= 300 && request.status < 400) {
           console.log('Redirecton')
-        } else if (xhr.status >= 400 && xhr.status < 500) {
+        } else if (request.status >= 400 && request.status < 500) {
           console.log('Client Error')
-        } else if (xhr.status >= 500) {
+        } else if (request.status >= 500) {
           console.log('Server Error')
         }
       }

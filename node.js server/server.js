@@ -17,7 +17,7 @@ var server = http.createServer(function(request, response){
   var queryObject = parsedUrl.query
   var method = request.method
 
-  console.log('Request: ' + path)
+  console.log(`${method} ${path}`)
 
   if(path == '/style.css'){
     response.setHeader('Content-Type', 'text/css; charset=utf-8')
@@ -39,7 +39,8 @@ var server = http.createServer(function(request, response){
   }else if(path == '/api/data'){
     response.statusCode = 200
     response.setHeader('Content-Type', 'text/json;charset=utf-8')
-    response.setHeader('Access-Control-Allow-Origin', 'http://frank.com:8001')
+    response.setHeader('Access-Control-Allow-Origin', 'http://127.0.0.1:8090')
+    // response.setHeader('Access-Control-Allow-Origin', '*')
     response.write(`{
       "name":"Javon Yan",
       "age": 18
