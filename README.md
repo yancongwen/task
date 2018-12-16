@@ -27,3 +27,8 @@
     - 预览：[https://yancongwen.cn/task/canvas-draw/](http://yancongwen.cn/task/canvas-draw/)
     - 介绍：
         使用Canvas制作的一个画板；支持桌面端和移动端；
+
+- 动态简历
+    - 预览：[https://yancongwen.cn/task/animating-resume/](http://yancongwen.cn/task/animating-resume/)
+    - 介绍：
+        动态简历，直播写代码。主要的技术要点就是将代码在 `<pre>` 标签中显示，并使用 `prism.js` 美化代码；使用 `marked.js` 渲染 markdown 文档。
