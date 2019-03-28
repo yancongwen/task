@@ -8,7 +8,7 @@ func1()
 func2()
 
 function component() {
-	let element = document.createElement('div')
+    let element = document.createElement('div')
     element.innerHTML = _.join(['Hello', 'webpack'], ' ')
     return element
 }

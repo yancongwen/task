@@ -1,5 +1,5 @@
 export default function a() {
-	setTimeout(()=>{
-		console.log('module-2')
-	})
+    setTimeout(()=>{
+        console.log('module-2')
+    })
 }
